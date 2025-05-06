@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Votre profil</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #e9eaed;
+            border-left: 1rem solid rgb(254, 109, 29);
+        }
+
+        .header {
+            background: rgb(254, 109, 29);
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            /*max-width: 960px;*/
+            /*margin: auto;*/
+            background: white;
+        }
+
+        .left {
+            /*width: 30%;*/
+            background: #f5f6f7;
+            padding: 10px;
+        }
+
+        .right {
+            width: 70%;
+            padding: 10px;
+        }
+
+        .cover {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: flex-end;
+            margin-top: -40px;
+            padding-left: 10px;
+        }
+
+        .profile-pic {
+            width: 80px;
+            height: 80px;
+            border: 3px solid white;
+            object-fit: cover;
+            background: white;
+        }
+
+        .profile-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            margin-left: 10px;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        .section {
+            background: #f0f2f5;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            color: #003366;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 5px;
+        }
+
+        .post img {
+            cursor: pointer;
+        }
+
+        /* Modal styles */
+        #imageModal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        #imageModalContent {
+            margin: 5% auto;
+            display: block;
+            max-width: 80%;
+            border: 5px solid white;
+        }
+
+        #closeModal {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .photos img {
+            width: 45%;
+            margin: 2%;
+            height: 60px;
+            object-fit: cover;
+        }
+
+        .post img {
+            width: 100%;
+            margin-top: 5px;
+            margin-left: 25%;
+        }
+
+        .comment-bar {
+            font-size: 12px;
+            color: gray;
+            text-align: right;
+            border-top: 1px solid #ccc;
+            margin-top: 5px;
+        }
+
+        .clickable-photo {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Votre profil</div>
+
+    <img src="imagens/cover.jpg" class="cover" alt="cover">
+
+    <div class="profile-header" style="background: #3b5998;">
+        <img src="imagens/profile.jpeg" class="profile-pic clickable-photo" alt="profile">
+        <div class="profile-name">
+
+            Nom: Guilherme Francisco<br />
+            Âge: 25 ans
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- LEFT SIDEBAR -->
+        <div class="left">
+            <div class="section">
+                <div class="section-title">Habite à</div>
+                Le Brésil
+            </div>
+            <div class="section">
+                <div class="section-title">Je suis ingénieur</div>
+            </div>
+            <div class="section">
+                <div class="section-title">Education</div>
+                J'étudie à l'Université de São Paulo
+            </div>
+            <div class="section photos">
+                <div class="section-title">Photos</div>
+                <img src="imagens/photo1.jpg" class="clickable-photo">
+                <img src="imagens/photo2.jpg" class="clickable-photo">
+                <img src="imagens/photo3.jpg" class="clickable-photo">
+                <img src="imagens/photo4.jpg" class="clickable-photo">
+            </div>
+            <div class="section">
+                <div class="section-title">Centres d’intérêt</div>
+                <ul>
+                    <li>Gym</li>
+                    <li>Étudier les langues (636 jours sur Duolingo)</li>
+                    <li>Technologie</li>
+                    <li>Japon</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- RIGHT MAIN SECTION -->
+        <div class="right">
+            <div class="section">
+                <div class="section-title">Brève présentation</div>
+                Je suis brésilien, j'ai 25 ans. Je suis diplômé de l'université de São Paulo en tant qu'ingénieur en
+                informatique. Je
+                parle anglais, portugais, et j'étudie le français, le chinois et le japonais.
+                <div class="comment-bar">like · comment · share</div>
+            </div>
+            <div class="section">
+                <div class="section-title">Je voudrais</div>
+                <div><input type="checkbox" checked /> apprendre une langue</div>
+                <div><input type="checkbox" checked /> aider les autres à apprendre ma langue</div>
+                <div><input type="checkbox" checked /> communiquer avec les gens</div>
+
+                <div class="comment-bar">like · comment · share</div>
+            </div>
+            <div class="section">
+                <div class="section-title">Vos contacts</div>
+                <img src="imagens/contact.jpg" style="width: 50px; vertical-align: middle;">
+                <span>Roberto <em>(Mexique)</em></span>
+                <div class="comment-bar">like · comment · share</div>
+            </div>
+            <div class="section post">
+                <div class="section-title">Partagé une photo</div>
+                <img src="imagens/shared.jpg" class="clickable-photo" style="width: 50%;">
+                <div class="comment-bar">like · comment · share</div>
+            </div>
+        </div>
+    </div>
+    <div id="imageModal">
+        <span id="closeModal">&times;</span>
+        <img id="imageModalContent" src="imagens/shared.jpg" alt="Full Image">
+    </div>
+
+
+    <script>
+        const modal3 = document.getElementById("imageModal");
+        const modalImg2 = document.getElementById("imageModalContent");
+        const closeBtn = document.getElementById("closeModal");
+
+        // Apply click listener to all images with class "clickable-photo"
+        document.querySelectorAll(".clickable-photo").forEach(img => {
+            img.addEventListener("click", function () {
+                modalImg2.src = this.src;
+                modal3.style.display = "block";
+            });
+        });
+
+        closeBtn.onclick = function () {
+            modal3.style.display = "none";
+        };
+
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal3.style.display = "none";
+            }
+        };
+    </script>
+</body>
+
+</html>
